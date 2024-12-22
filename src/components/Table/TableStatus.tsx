@@ -1,4 +1,3 @@
-import React from 'react'
 import { 
   Paper, 
   List, 
@@ -7,7 +6,7 @@ import {
   Chip, 
   Typography 
 } from '@mui/material'
-import type { Table } from '../../types/table'
+import type { Table } from '@/types/table'
 
 type Props = {
   tables: Table[]

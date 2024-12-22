@@ -1,4 +1,3 @@
-import React from 'react'
 import { 
   Box, 
   Paper, 
@@ -10,7 +9,7 @@ import {
   TableRestaurant as TableIcon,
   Person as PersonIcon 
 } from '@mui/icons-material'
-import type { Table } from '../../types/table'
+import type { Table } from '@/types/table'
 
 type Props = {
   tables: Table[]

@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import type { Table } from '../types/table'
+import type { Table } from '@/types/table'
 
 export type TableStatus = 'available' | 'occupied' | 'reserved'
 

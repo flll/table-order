@@ -1,6 +1,6 @@
-import { MenuItem } from '../types/menu'
-import { Order, OrderItem } from '../types/order'
-import { Table } from '../types/table'
+import { MenuItem } from '../types/menu.js'
+import { Order, OrderItem } from '../types/order.js'
+import { Table } from '../types/table.js'
 
 // メニュー項目のバリデーション
 export const validateMenuItem = (item: Partial<MenuItem>): string[] => {

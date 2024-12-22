@@ -1,6 +1,5 @@
-import React from 'react'
 import { Box, Paper, Typography } from '@mui/material'
-import type { Order } from '../../types/order'
+import type { Order } from '@/types/order'
 
 type Props = {
   orders: Order[]

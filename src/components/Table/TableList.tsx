@@ -1,13 +1,12 @@
-import React from 'react'
+import type { FC } from 'react'
 import { Box, Typography } from '@mui/material'
 import Grid2 from '@mui/material/Grid2'
 import { TableStatus } from './TableStatus'
 import { TableMap } from './TableMap'
-import { useTableStore } from '../../stores/tableStore'
+import { useTableStore } from '@stores/tableStore'
 
-export const TableList = () => {
+export const TableList: FC = () => {
   const tables = useTableStore(state => state.tables)
-  const updateTableStatus = useTableStore(state => state.updateTableStatus)
 
   return (
     <Box sx={{ p: 2 }}>
@@ -28,4 +27,4 @@ export const TableList = () => {
       </Grid2>
     </Box>
   )
-} 
+}

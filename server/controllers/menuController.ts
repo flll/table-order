@@ -1,5 +1,5 @@
 import type { RequestHandler } from 'express'
-import { Menu } from '../models/Menu'
+import { Menu } from '@/models/Menu.ts'
 
 export const menuController = {
   // メニュー一覧の取得
