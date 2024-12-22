@@ -31,12 +31,12 @@ export class OrderController {
   }
 
   getOrder(req: Request, res: Response) {
-    const { id } = req.params;
+    const { id: _id } = req.params;
     // 注文データの取得処理（実装は省略）
     res.json({ message: '注文データ取得API' });
   }
 
-  getActiveOrders(req: Request, res: Response) {
+  getActiveOrders(_req: Request, res: Response) {
     // アクティブな注文の取得処理（実装は省略）
     res.json({ message: 'アクティブな注文取得API' });
   }

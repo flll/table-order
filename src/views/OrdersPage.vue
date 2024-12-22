@@ -100,7 +100,8 @@ const refreshOrders = async () => {
 
 const handleRefresh = async (event: CustomEvent) => {
   await refreshOrders()
-  event.target.complete()
+  const target = event.target as HTMLIonRefresherElement
+  target?.complete()
 }
 
 const formatDate = (timestamp: string) => {

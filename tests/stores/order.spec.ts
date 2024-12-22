@@ -1,7 +1,21 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { setActivePinia, createPinia } from 'pinia'
-import { useOrderStore } from '../order'
-import type { MenuItem } from '../order'
+import { useOrderStore } from '../../src/stores/order'
+import type { MenuItem } from '../../src/stores/order'
+
+vi.mock('axios', () => ({
+  default: {
+    post: vi.fn().mockResolvedValue({ data: { orderId: '123' } }),
+    get: vi.fn().mockResolvedValue({ 
+      data: [{
+        items: [{ id: 1, name: '商品1', description: '説明1', price: 1000, image: 'image1.jpg', quantity: 1 }],
+        tableNumber: '1',
+        timestamp: '2024-01-01T00:00:00Z',
+        status: 'pending'
+      }]
+    })
+  }
+}))
 
 describe('Order Store', () => {
   beforeEach(() => {
@@ -98,13 +112,6 @@ describe('Order Store', () => {
       const store = useOrderStore()
       const item: MenuItem = { id: 1, name: '商品1', description: '説明1', price: 1000, image: 'image1.jpg' }
       
-      // axiosのモック
-      vi.mock('axios', () => ({
-        default: {
-          post: vi.fn().mockResolvedValue({ data: { orderId: '123' } })
-        }
-      }))
-
       store.addToCart(item)
       await store.submitOrder()
       
@@ -113,25 +120,16 @@ describe('Order Store', () => {
 
     it('fetchActiveOrders: アクティブな注文を取得する', async () => {
       const store = useOrderStore()
-      const mockOrders = [
+      await store.fetchActiveOrders()
+      
+      expect(store.activeOrders).toEqual([
         {
           items: [{ id: 1, name: '商品1', description: '説明1', price: 1000, image: 'image1.jpg', quantity: 1 }],
           tableNumber: '1',
-          timestamp: new Date().toISOString(),
+          timestamp: '2024-01-01T00:00:00Z',
           status: 'pending'
         }
-      ]
-
-      // axiosのモック
-      vi.mock('axios', () => ({
-        default: {
-          get: vi.fn().mockResolvedValue({ data: mockOrders })
-        }
-      }))
-
-      await store.fetchActiveOrders()
-      
-      expect(store.activeOrders).toEqual(mockOrders)
+      ])
     })
   })
 }) 
