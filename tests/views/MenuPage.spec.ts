@@ -75,13 +75,13 @@ describe('MenuPage', () => {
     const wrapper = mount(MenuPage, mountOptions)
     await wrapper.vm.$nextTick()
     
-    // カテゴリーの確認
+
     const categories = wrapper.findAll('h2.ion-card-title')
     expect(categories).toHaveLength(2)
     expect(categories[0].text()).toBe('定食')
     expect(categories[1].text()).toBe('麺類')
 
-    // アイテムの確認
+
     const items = wrapper.findAll('.ion-item')
     expect(items).toHaveLength(4)
     const itemNames = items.map(item => item.find('.ion-label h2').text())
@@ -92,12 +92,12 @@ describe('MenuPage', () => {
     const wrapper = mount(MenuPage, mountOptions)
     await wrapper.vm.$nextTick()
     
-    // 最初の商品の追加ボタンをクリック
+
     const addButtons = wrapper.findAll('button.ion-button')
     expect(addButtons).toHaveLength(4)
     await addButtons[0].trigger('click')
 
-    // ストアの状態を確認
+
     const store = useOrderStore()
     expect(store.cartItems).toHaveLength(1)
     expect(store.cartItems[0].name).toBe('唐揚げ定食')

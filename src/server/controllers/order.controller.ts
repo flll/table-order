@@ -9,12 +9,11 @@ export class OrderController {
     try {
       const orderData = req.body as Order;
       
-      // 注文データの検証
+
       if (!orderData.items || orderData.items.length === 0) {
         return res.status(400).json({ message: '注文項目が必要です' });
       }
 
-      // キッチンプリンターへの印刷
       const printResult = await printerService.printOrder(orderData);
       if (!printResult) {
         return res.status(500).json({ message: '印刷に失敗しました' });
@@ -32,12 +31,10 @@ export class OrderController {
 
   getOrder(req: Request, res: Response) {
     const { id: _id } = req.params;
-    // 注文データの取得処理（実装は省略）
     res.json({ message: '注文データ取得API' });
   }
 
   getActiveOrders(_req: Request, res: Response) {
-    // アクティブな注文の取得処理（実装は省略）
     res.json({ message: 'アクティブな注文取得API' });
   }
 } 

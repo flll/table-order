@@ -112,11 +112,11 @@ describe('CartPage', () => {
 
     const buttons = wrapper.findAll('.ion-button')
     
-    // 増加ボタン（2番目のボタン）
+
     await buttons[1].trigger('click')
     expect(store.cartItems[0].quantity).toBe(2)
 
-    // 減少ボタン（1番目のボタン）
+
     await buttons[0].trigger('click')
     expect(store.cartItems[0].quantity).toBe(1)
   })

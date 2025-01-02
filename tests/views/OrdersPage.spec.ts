@@ -59,11 +59,11 @@ describe('OrdersPage', () => {
     })
     expect(wrapper.find('.no-orders').exists()).toBe(false)
     
-    // 注文情報の確認
+
     expect(wrapper.find('.stub-IonItemDivider h2').text()).toContain('2024/3/1')
     expect(wrapper.find('.stub-IonItemDivider p').text()).toBe('テーブル 1')
     
-    // 商品情報の確認
+
     const item = wrapper.find('.stub-IonItem')
     expect(item.find('h3').text()).toBe('テスト商品')
     expect(item.find('.stub-IonNote').text()).toBe('2個')

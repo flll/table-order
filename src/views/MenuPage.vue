@@ -71,7 +71,6 @@ interface MenuCategory {
 
 const store = useOrderStore()
 
-// サンプルメニューデータ
 const menuCategories = ref<MenuCategory[]>([
   {
     id: 1,

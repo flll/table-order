@@ -3,9 +3,9 @@ import viteConfig from './vite.config'
 import vue from '@vitejs/plugin-vue'
 import { fileURLToPath } from 'node:url'
 
-export default mergeConfig(
-  viteConfig,
-  defineConfig({
+export default defineConfig(async () => {
+  const config = await viteConfig
+  return mergeConfig(config, {
     plugins: [vue()],
     test: {
       environment: 'jsdom',
@@ -29,4 +29,4 @@ export default mergeConfig(
       }
     }
   })
-) 
+}) 

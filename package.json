@@ -2,7 +2,7 @@
   "name": "table-order",
   "version": "1.0.0",
   "description": "タブレット用テーブル注文システム",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
     "dev:client": "vite",
@@ -10,10 +10,11 @@
     "build": "npm run build:client && npm run build:server",
     "build:client": "vue-tsc && vite build",
     "build:server": "tsc -p tsconfig.server.json",
-    "start": "node dist/server/server.js",
+    "start": "node dist/server/server/server.js",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "test": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "update-package": "ncu -u && npm install"
   },
   "dependencies": {
     "@ionic/vue": "^8.4.1",
@@ -30,22 +31,26 @@
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.10.4",
     "@tsconfig/node22": "^22.0.0",
+    "@types/connect": "^3.4.38",
     "@types/cors": "^2.8.17",
+    "@types/estree": "^1.0.6",
     "@types/express": "^5.0.0",
-    "@types/node": "^22.10.2",
+    "@types/json-schema": "^7.0.15",
+    "@types/node": "^22.10.3",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vitest/coverage-v8": "^2.1.8",
     "@vue/eslint-config-prettier": "^10.1.0",
-    "@vue/eslint-config-typescript": "^14.1.4",
+    "@vue/eslint-config-typescript": "^14.2.0",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.7.0",
-    "concurrently": "^9.1.0",
+    "concurrently": "^9.1.2",
     "eslint": "^9.17.0",
     "eslint-plugin-vue": "^9.32.0",
+    "npm-check-updates": "^17.1.13",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2",
-    "vite": "^5.4.11",
+    "vite": "^6.0.6",
     "vitest": "^2.1.8",
-    "vue-tsc": "^2.1.10"
+    "vue-tsc": "^2.2.0"
   }
 }
