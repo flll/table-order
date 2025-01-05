@@ -1,0 +1,51 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "定食",
+      "items": [
+        {
+          "id": 101,
+          "name": "唐揚げ定食",
+          "description": "揚げたての唐揚げと季節の野菜",
+          "price": 850,
+          "image": "/images/karaage.jpg"
+        },
+        {
+          "id": 102,
+          "name": "刺身定食",
+          "description": "新鮮な刺身の盛り合わせ",
+          "price": 1200,
+          "image": "/images/sashimi.jpg"
+        },
+        {
+          "id": 103,
+          "name": "サバの味噌煮定食",
+          "description": "脂ののったサバの味噌煮と季節の副菜",
+          "price": 900,
+          "image": "/images/saba-misoni.jpg"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "麺類",
+      "items": [
+        {
+          "id": 201,
+          "name": "うどん",
+          "description": "コシのある自家製麺",
+          "price": 700,
+          "image": "/images/udon.jpg"
+        },
+        {
+          "id": 202,
+          "name": "ラーメン",
+          "description": "濃厚な豚骨スープ",
+          "price": 800,
+          "image": "/images/ramen.jpg"
+        }
+      ]
+    }
+  ]
+} 

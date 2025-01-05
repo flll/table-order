@@ -10,6 +10,7 @@
       <div class="empty-cart" v-if="!cartItems.length">
         <ion-icon :icon="cartOutline" size="large" />
         <p>カートは空です</p>
+        <p>メニューをタップして商品を選んでください</p>
       </div>
 
       <ion-list v-else>
@@ -124,29 +125,4 @@ const submitOrder = async () => {
     isSubmitting.value = false
   }
 }
-</script>
-
-<style scoped>
-.empty-cart {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  color: var(--ion-color-medium);
-}
-
-.empty-cart ion-icon {
-  font-size: 64px;
-  margin-bottom: 16px;
-}
-
-.quantity {
-  margin: 0 10px;
-  font-size: 1.1em;
-}
-
-ion-footer {
-  padding: 16px;
-}
-</style> 
+</script> 

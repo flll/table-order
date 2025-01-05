@@ -8,6 +8,10 @@ const routes: Array<RouteRecordRaw> = [
     redirect: '/tabs/menu'
   },
   {
+    path: '/admin',
+    component: () => import('../views/AdminPage.vue')
+  },
+  {
     path: '/tabs/',
     component: TabsPage,
     children: [

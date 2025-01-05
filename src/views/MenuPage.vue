@@ -62,57 +62,10 @@ import { addOutline } from 'ionicons/icons'
 import { ref } from 'vue'
 import { useOrderStore } from '@/stores/order'
 import type { MenuItem } from '@/stores/order'
-
-interface MenuCategory {
-  id: number
-  name: string
-  items: MenuItem[]
-}
+import menuData from '@/data/menu.json'
 
 const store = useOrderStore()
-
-const menuCategories = ref<MenuCategory[]>([
-  {
-    id: 1,
-    name: '定食',
-    items: [
-      {
-        id: 101,
-        name: '唐揚げ定食',
-        description: '揚げたての唐揚げと季節の野菜',
-        price: 850,
-        image: '/images/karaage.jpg'
-      },
-      {
-        id: 102,
-        name: '刺身定食',
-        description: '新鮮な刺身の盛り合わせ',
-        price: 1200,
-        image: '/images/sashimi.jpg'
-      }
-    ]
-  },
-  {
-    id: 2,
-    name: '麺類',
-    items: [
-      {
-        id: 201,
-        name: 'うどん',
-        description: 'コシのある自家製麺',
-        price: 700,
-        image: '/images/udon.jpg'
-      },
-      {
-        id: 202,
-        name: 'ラーメン',
-        description: '濃厚な豚骨スープ',
-        price: 800,
-        image: '/images/ramen.jpg'
-      }
-    ]
-  }
-])
+const menuCategories = ref(menuData.categories)
 
 const addToCart = (item: MenuItem) => {
   store.addToCart(item)
